@@ -3,21 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BokuNo - Controller Support for Ragnarok Online</title>
+    <title>BokuNo - Plugin System for Ragnarok Online</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">BokuNo</a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="controller-support.html" class="nav-link">Controller Support</a></li>
+                <li><a href="https://github.com/foksikus/BokuNo" class="nav-link" target="_blank">GitHub</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <div class="container">
         <header>
             <h1 class="logo">BokuNo</h1>
-            <p class="tagline">Play Ragnarok Online with a Controller</p>
+            <p class="tagline">Plugin System for Ragnarok Online</p>
         </header>
 
         <main>
             <section class="hero">
                 <div class="hero-content">
-                    <h2>Full Gamepad Support for RO</h2>
-                    <p>Transform your Ragnarok Online experience with native controller support. Move, attack, cast skills, and explore—all from the comfort of your gamepad.</p>
+                    <h2>Extend Your RO Experience</h2>
+                    <p>BokuNo is a custom plugin system that extends the capabilities of the Ragnarok Online client. Load custom plugins to add new features and enhance your gameplay.</p>
                     <a href="https://github.com/foksikus/BokuNo/releases/latest/download/BokuNo.zip" class="download-btn">
                         <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
                             <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
@@ -28,84 +39,31 @@
                 </div>
             </section>
 
-            <section class="features">
-                <h3>Features</h3>
-                <div class="feature-grid">
-                    <div class="feature-card">
-                        <div class="icon">🎮</div>
-                        <h4>Full Gamepad Support</h4>
-                        <p>Native Xbox-style controller integration</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="icon">🎯</div>
-                        <h4>Smart Targeting</h4>
-                        <p>Cycle through enemies and auto-target closest mobs</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="icon">⚔️</div>
-                        <h4>Combat Ready</h4>
-                        <p>Attack, cast skills, and use items with button presses</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="icon">🕹️</div>
-                        <h4>Intuitive Controls</h4>
-                        <p>Left stick moves, right stick rotates camera</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="icon">⚙️</div>
-                        <h4>Fully Customizable</h4>
-                        <p>Configure any button to perform different actions</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="icon">🔌</div>
-                        <h4>Plug & Play</h4>
-                        <p>Simple installation, automatic loading</p>
+            <section class="plugins">
+                <h3>Available Plugins</h3>
+                <div class="plugin-grid">
+                    <a href="controller-support.html" class="plugin-card">
+                        <div class="plugin-icon">🎮</div>
+                        <h4>Controller Support</h4>
+                        <p>Play Ragnarok Online with full gamepad support. Customizable button mappings for movement, combat, and skills.</p>
+                        <span class="plugin-status ready">Ready</span>
+                    </a>
+                    <div class="plugin-card coming-soon">
+                        <div class="plugin-icon">🔐</div>
+                        <h4>Auto Login</h4>
+                        <p>Automatically log in to your character with saved credentials.</p>
+                        <span class="plugin-status planned">Coming Soon</span>
                     </div>
                 </div>
-            </section>
-
-            <section class="controls">
-                <h3>Default Controls</h3>
-                <div class="controls-layout">
-                    <div class="control-item">
-                        <span class="button">Left Stick</span>
-                        <span class="action">Character Movement</span>
-                    </div>
-                    <div class="control-item">
-                        <span class="button">Right Stick</span>
-                        <span class="action">Camera Rotation</span>
-                    </div>
-                    <div class="control-item">
-                        <span class="button">A Button</span>
-                        <span class="action">Attack Target</span>
-                    </div>
-                    <div class="control-item">
-                        <span class="button">B Button</span>
-                        <span class="action">Use Skill</span>
-                    </div>
-                    <div class="control-item">
-                        <span class="button">X Button</span>
-                        <span class="action">Use Item</span>
-                    </div>
-                    <div class="control-item">
-                        <span class="button">RB</span>
-                        <span class="action">Next Target</span>
-                    </div>
-                    <div class="control-item">
-                        <span class="button">R3</span>
-                        <span class="action">Center Camera</span>
-                    </div>
-                </div>
-                <p class="note">All buttons are fully customizable via config_gamepad.json</p>
             </section>
 
             <section class="installation">
-                <h3>Quick Start</h3>
+                <h3>Installation</h3>
                 <ol>
-                    <li>Download the BokuNo.zip package</li>
-                    <li>Copy <code>ddraw.dll</code> to your Ragnarok Online root folder</li>
+                    <li>Download the BokuNo.zip package from GitHub releases</li>
+                    <li>Extract and copy <code>ddraw.dll</code> (the BokuNo core) to your Ragnarok Online root folder</li>
                     <li>Copy the <code>plugins</code> folder to your Ragnarok Online root folder</li>
-                    <li>Connect your controller and launch the game</li>
+                    <li>Launch Ragnarok Online - plugins will load automatically</li>
                 </ol>
             </section>
         </main>
