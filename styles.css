@@ -8,7 +8,7 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     line-height: 1.6;
     color: #e0e0e0;
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    background: #181818;
     min-height: 100vh;
     padding-top: 70px;
 }
@@ -18,9 +18,9 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(26, 26, 46, 0.95);
+    background: rgba(24, 24, 24, 0.95);
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(0, 255, 255, 0.2);
     z-index: 1000;
 }
 
@@ -37,10 +37,7 @@ body {
 .nav-logo {
     font-size: 1.5rem;
     font-weight: 900;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #00ffff;
     text-decoration: none;
     letter-spacing: -1px;
 }
@@ -60,15 +57,62 @@ body {
     transition: color 0.2s;
     padding: 0.5rem 0;
     border-bottom: 2px solid transparent;
+    display: block;
 }
 
 .nav-link:hover {
-    color: #667eea;
+    color: #00ffff;
 }
 
 .nav-link.active {
-    color: #667eea;
-    border-bottom-color: #667eea;
+    color: #00ffff;
+    border-bottom-color: #00ffff;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #202020;
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    border-radius: 8px;
+    min-width: 200px;
+    margin-top: 0.5rem;
+    padding: 0.5rem 0;
+    list-style: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li {
+    padding: 0;
+}
+
+.dropdown-menu a {
+    color: #b0b0b0;
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    display: block;
+    transition: background 0.2s, color 0.2s;
+    border-bottom: none;
+}
+
+.dropdown-menu a:hover {
+    background: rgba(0, 255, 255, 0.1);
+    color: #00ffff;
+}
+
+.dropdown-menu a.active {
+    color: #00ffff;
+    background: rgba(0, 255, 255, 0.05);
 }
 
 .container {
@@ -87,10 +131,7 @@ header {
 .logo {
     font-size: 4rem;
     font-weight: 900;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #00ffff;
     margin-bottom: 0.5rem;
     letter-spacing: -2px;
 }
@@ -127,19 +168,20 @@ header {
     padding: 1rem 2.5rem;
     font-size: 1.2rem;
     font-weight: 600;
-    color: #ffffff;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #181818;
+    background: #00ffff;
     border: none;
-    border-radius: 50px;
+    border-radius: 8px;
     text-decoration: none;
     cursor: pointer;
     transition: transform 0.2s, box-shadow 0.2s;
-    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 4px 12px rgba(0, 255, 255, 0.3);
 }
 
 .download-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
+    box-shadow: 0 8px 20px rgba(0, 255, 255, 0.5);
+    background: #00e6e6;
 }
 
 .download-btn svg {
@@ -166,19 +208,18 @@ h3 {
 }
 
 .feature-card {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
+    background: #202020;
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
     padding: 2rem;
     text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
 }
 
 .feature-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
-    border-color: rgba(102, 126, 234, 0.5);
+    box-shadow: 0 4px 12px rgba(0, 255, 255, 0.2);
+    border-color: #00ffff;
 }
 
 .icon {
@@ -209,13 +250,12 @@ h3 {
 }
 
 .plugin-card {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
+    background: #202020;
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
     padding: 2.5rem;
     text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
     text-decoration: none;
     color: inherit;
     display: block;
@@ -224,8 +264,8 @@ h3 {
 
 .plugin-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
-    border-color: rgba(102, 126, 234, 0.5);
+    box-shadow: 0 4px 12px rgba(0, 255, 255, 0.2);
+    border-color: #00ffff;
 }
 
 .plugin-card.coming-soon {
@@ -236,7 +276,7 @@ h3 {
 .plugin-card.coming-soon:hover {
     transform: none;
     box-shadow: none;
-    border-color: rgba(255, 255, 255, 0.1);
+    border-color: #2a2a2a;
 }
 
 .plugin-icon {
@@ -279,10 +319,9 @@ h3 {
 }
 
 .planned {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
+    background: #202020;
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
     padding: 3rem;
     margin-bottom: 4rem;
 }
@@ -295,9 +334,9 @@ h3 {
 }
 
 .planned-item {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 159, 67, 0.2);
-    border-radius: 12px;
+    background: #1a1a1a;
+    border: 1px solid rgba(255, 159, 67, 0.3);
+    border-radius: 8px;
     padding: 1.5rem;
     text-align: center;
 }
@@ -320,10 +359,9 @@ h3 {
 }
 
 .config-section {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
+    background: #202020;
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
     padding: 3rem;
     margin-bottom: 4rem;
 }
@@ -343,15 +381,15 @@ h3 {
 }
 
 .action-card {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
     border-radius: 8px;
     padding: 1.5rem;
     text-align: center;
 }
 
 .action-card h4 {
-    color: #667eea;
+    color: #00ffff;
     margin-bottom: 0.5rem;
     font-size: 1.1rem;
 }
@@ -362,10 +400,9 @@ h3 {
 }
 
 .known-issues {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
+    background: #202020;
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
     padding: 3rem;
 }
 
@@ -379,7 +416,7 @@ h3 {
 .issues-list li {
     padding: 1rem 1.5rem;
     margin-bottom: 1rem;
-    background: rgba(255, 255, 255, 0.03);
+    background: #1a1a1a;
     border-left: 3px solid #ff9f43;
     border-radius: 4px;
     color: #d0d0d0;
@@ -390,10 +427,9 @@ h3 {
 }
 
 .controls {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
+    background: #202020;
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
     padding: 3rem;
 }
 
@@ -409,14 +445,14 @@ h3 {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 1.5rem;
-    background: rgba(255, 255, 255, 0.05);
+    background: #1a1a1a;
     border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid #2a2a2a;
 }
 
 .button {
     font-weight: 600;
-    color: #667eea;
+    color: #00ffff;
     font-size: 1.1rem;
 }
 
@@ -432,10 +468,9 @@ h3 {
 }
 
 .installation {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
+    background: #202020;
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
     padding: 3rem;
 }
 
@@ -450,7 +485,7 @@ h3 {
     counter-increment: step-counter;
     padding: 1.5rem 1.5rem 1.5rem 4rem;
     margin-bottom: 1rem;
-    background: rgba(255, 255, 255, 0.05);
+    background: #1a1a1a;
     border-radius: 8px;
     position: relative;
     font-size: 1.1rem;
@@ -465,13 +500,13 @@ h3 {
     transform: translateY(-50%);
     width: 32px;
     height: 32px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: #00ffff;
+    color: #181818;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 700;
-    color: white;
 }
 
 code {
@@ -494,7 +529,7 @@ footer a {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    color: #667eea;
+    color: #00ffff;
     text-decoration: none;
     font-size: 1.1rem;
     font-weight: 500;
@@ -502,7 +537,7 @@ footer a {
 }
 
 footer a:hover {
-    color: #764ba2;
+    color: #00e6e6;
 }
 
 footer svg {
