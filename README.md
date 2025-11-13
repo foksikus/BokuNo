@@ -1,3 +1,5 @@
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/Z8Z7QWDNW)
+
 # BokuNo
 
 A System for loading custom plugins and extending the capabilities of the Ragnarok-Online Client.
