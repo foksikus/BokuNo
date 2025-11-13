@@ -3,21 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BokuNo - Plugin System for Ragnarok Online</title>
+    <title>::bokuno - Plugin System for Ragnarok Online</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <nav class="navbar">
         <div class="nav-container">
-            <a href="index.html" class="nav-logo">BokuNo</a>
+            <a href="index.html" class="nav-logo">::bokuno</a>
             <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link active">Home</a></li>
-                <li class="dropdown">
+                <li><a href="index.html" class="nav-link active">main</a></li>
+                <!-- <li class="dropdown">
                     <a href="#" class="nav-link">Plugins ▾</a>
                     <ul class="dropdown-menu">
-                        <li><a href="controller-support.html">Controller Support</a></li>
+                        <li><a href="gamepad-support.html">Gamepad Support</a></li>
                     </ul>
-                </li>
+                </li> -->
+                <li><a href="gamepad-support.html" class="nav-link">gamepad_support</a></li>
                 <li><a href="https://github.com/foksikus/BokuNo" class="nav-link" target="_blank">GitHub</a></li>
             </ul>
         </div>
@@ -25,7 +26,7 @@
 
     <div class="container">
         <header>
-            <h1 class="logo">BokuNo</h1>
+            <h1 class="logo">::bokuno</h1>
             <p class="tagline">Plugin System for Ragnarok Online</p>
         </header>
 
@@ -33,13 +34,14 @@
             <section class="hero">
                 <div class="hero-content">
                     <h2>Extend Your RO Experience</h2>
-                    <p>BokuNo is a custom plugin system that extends the capabilities of the Ragnarok Online client. Load custom plugins to add new features and enhance your gameplay.</p>
+                    <p>Bokuno is a custom plugin system that extends the capabilities of the Ragnarok Online client. Load custom plugins to add new features and enhance your gameplay.</p>
                     <a href="https://github.com/foksikus/BokuNo/releases/latest/download/BokuNo.zip" class="download-btn">
                         <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
                             <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
                             <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
                         </svg>
-                        Download BokuNo
+                        <!-- Download ::bokuno -->
+                         ::Download(::bokuno);
                     </a>
                 </div>
             </section>
@@ -47,18 +49,21 @@
             <section class="plugins">
                 <h3>Available Plugins</h3>
                 <div class="plugin-grid">
-                    <a href="controller-support.html" class="plugin-card">
-                        <div class="plugin-icon">🎮</div>
-                        <h4>Controller Support</h4>
-                        <p>Play Ragnarok Online with full gamepad support. Customizable button mappings for movement, combat, and skills.</p>
-                        <span class="plugin-status ready">Ready</span>
+                    <a href="gamepad-support.html" class="plugin-card">
+                        <!-- <div class="plugin-icon">🎮</div> -->
+                         <!-- <span class="plugin-status ready">Ready</span> -->
+                         <div class="gamepad-support-bg"></div>
+                         <div class="plugin-info">
+                            <h4>Gamepad Support</h4>
+                            <p>Play Ragnarok Online with full gamepad support. Customizable button mappings for movement, combat, and skills.</p>
+                         </div>
                     </a>
-                    <div class="plugin-card coming-soon">
+                    <!-- <div class="plugin-card coming-soon">
                         <div class="plugin-icon">🔐</div>
                         <h4>Auto Login</h4>
                         <p>Automatically log in to your character with saved credentials.</p>
                         <span class="plugin-status planned">Coming Soon</span>
-                    </div>
+                    </div> -->
                 </div>
             </section>
 
@@ -71,6 +76,16 @@
                     <li>Launch Ragnarok Online - plugins will load automatically</li>
                 </ol>
             </section>
+
+            <section class="known-issues">
+                <h3>Known Issues</h3>
+                <ul class="issues-list">
+                    <li><strong>Target Selection Icon:</strong> The target indicator works best if you manually click a monster with your mouse first</li>
+                    <li><strong>Setup Application:</strong> Remove <code>ddraw.dll</code> temporarily if you need to run <code>opensetup.exe</code></li>
+                    <li><strong>Ground Skills:</strong> Not supported yet - planned for future update</li>
+                    <li><strong>Gamepad Compatibility:</strong> Only tested with Xbox Gamepads, other types may not work</li>
+                </ul>
+            </section>
         </main>
 
         <footer>
@@ -82,7 +97,7 @@
                     View on GitHub
                 </a>
             </p>
-            <p class="compatibility">Works exclusively with MyRO • Tested with Xbox Controllers</p>
+            <p class="compatibility">Works exclusively with MyRO • Tested with Xbox Gamepads</p>
         </footer>
     </div>
 </body>

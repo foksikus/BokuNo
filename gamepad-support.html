@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamepad Support - ::bokuno Plugin</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">::bokuno</a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">main</a></li>
+                <!-- <li class="dropdown">
+                    <a href="#" class="nav-link">Plugins ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="gamepad-support.html">Gamepad Support</a></li>
+                    </ul>
+                </li> -->
+                <li><a href="gamepad-support.html" class="nav-link active">gamepad_support</a></li>
+                <li><a href="https://github.com/foksikus/BokuNo" class="nav-link" target="_blank">GitHub</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1 class="logo">::gamepad_support</h1>
+            <small>::bokuno Plugin</small>
+            <p class="tagline">Gamepad Support for Ragnarok Online</p>
+        </header>
+
+        <main>
+            <section class="hero">
+                <div class="hero-content">
+                    <h2>Play RO with a Gamepad</h2>
+                    <p>Transform your Ragnarok Online experience with native Gamepad support. Move, attack, cast skills, and explore—all from the comfort of your gamepad.</p>
+                    <a href="https://github.com/foksikus/BokuNo/releases/latest/download/BokuNo.zip" class="download-btn">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                            <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                        </svg>
+                        <!-- Download ::bokuno -->
+                         ::Download(::bokuno);
+                    </a>
+                </div>
+            </section>
+
+            <section class="features">
+                <h3>Features</h3>
+
+                <!-- <ol>
+                    <li><strong>Full Gamepad Support:</strong> Native Xbox-style Gamepad integration for seamless gameplay.</li>
+                    <li><strong>Smart Targeting:</strong> Cycle through enemies and auto-target closest mobs with ease.</li>
+                    <li><strong>Combat Ready:</strong> Attack, cast skills, and use items with simple button presses.</li>
+                    <li><strong>Intuitive Controls:</strong> Left stick moves your character, right stick rotates the camera.</li>
+                    <li><strong>Fully Customizable:</strong> Configure any button to perform different actions via JSON config.</li>
+                    <li><strong>Plug & Play:</strong> Simple installation process, automatic loading with ::bokuno.</li>
+                </ol> -->
+
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="icon">⚔️</div>
+                        <h4>Combat</h4>
+                        <p>Attack, cast skills, and use items with button presses</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">🎯</div>
+                        <h4>Targeting</h4>
+                        <p>Cycle through enemies or auto-target closest mobs</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">🕹️</div>
+                        <h4>Movement Controls</h4>
+                        <p>Left stick moves, right stick rotates camera</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">⚙️</div>
+                        <h4>Customizable</h4>
+                        <p>Configure any button to perform different actions</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">🔌</div>
+                        <h4>Simplicity</h4>
+                        <p>Simple installation, automatic loading</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="installation">
+                <h3>Setup</h3>
+                <ol>
+                    <li><a href="https://github.com/foksikus/BokuNo/releases/latest/download/BokuNo.zip" style="color: #00ffff;">::Download</a> and install bokuno-core (also see <a href="index.html" style="color: #00ffff;">::main</a> page) </li>
+                    <li>The Gamepad support plugin is included in the <code>plugins</code> folder</li>
+                    <li>Connect your Gamepad before launching the game</li>
+                    <li>Customize button mappings by editing <code>plugins/config_gamepad.json</code></li>
+                </ol>
+            </section>
+
+            <section class="config-section">
+                <h3>Configuration</h3>
+                <p class="config-desc">Edit <code>config_gamepad.json</code> to customize button mappings. Available actions:</p>
+                <div class="action-grid">
+                    <div class="action-card">
+                        <h4>Attack</h4>
+                        <p>Attack the currently selected target</p>
+                    </div>
+                    <div class="action-card">
+                        <h4>UseSkill</h4>
+                        <p>Cast a skill (requires skill_id and level)</p>
+                    </div>
+                    <div class="action-card">
+                        <h4>UseItem</h4>
+                        <p>Use an item from inventory (requires item_id)</p>
+                    </div>
+                    <div class="action-card">
+                        <h4>NextTarget</h4>
+                        <p>Cycle through nearby enemies</p>
+                    </div>
+                    <div class="action-card">
+                        <h4>CenterCamera</h4>
+                        <p>Reset camera to default view</p>
+                    </div>
+                </div>
+                <small>For more detailed information visit the <a href="https://github.com/foksikus/BokuNo" style="color: #00ffff;">GitHub repository</a>.</small>
+            </section>
+        </main>
+
+        <footer>
+            <p>
+                <a href="https://github.com/foksikus/BokuNo" target="_blank" rel="noopener">
+                    <svg width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                    </svg>
+                    View on GitHub
+                </a>
+            </p>
+            <p class="compatibility">Works exclusively with MyRO • Tested with Xbox Gamepads</p>
+        </footer>
+    </div>
+</body>
+</html>
