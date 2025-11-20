@@ -217,9 +217,21 @@ Resets the camera angle to 0 degrees (default view).
 
 ## Controls
 
+### in Charackter selection Screen
+- **Left Thumbstick**: Move selection
+- **D-Pad**: Move Selection
+- **A Button**: Confirm
+- **B Button**: Cancel
+
+### in Gameplay
 - **Left Thumbstick**: Move your character
 - **Right Thumbstick**: Rotate camera
 - **Buttons**: As configured in `config_gamepad.json`
+
+### in NPC Dialog
+- **D-Pad**: Move Selection
+- **A Button**: Confirm/next/close
+- **B Button**: Cancel
 
 ## Known Issues
 
