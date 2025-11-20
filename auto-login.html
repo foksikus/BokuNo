@@ -3,6 +3,13 @@
 <head>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-G2N20HL3DS"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+    <!-- and it's easy to individually load additional languages -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/ts.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/json.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -12,7 +19,7 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>::bokuno - Plugin System for Ragnarok Online</title>
+    <title>Auto Login - ::bokuno Plugin</title>
     <link rel="stylesheet" href="styles.css">
     <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('luvme', '#73d7f5', 'Z8Z7QWDNW');kofiwidget2.draw();</script> 
 </head>
@@ -21,7 +28,7 @@
         <div class="nav-container">
             <a href="index.html" class="nav-logo">::bokuno</a>
             <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link active">main</a></li>
+                <li><a href="index.html" class="nav-link">main</a></li>
                 <!-- <li class="dropdown">
                     <a href="#" class="nav-link">Plugins ▾</a>
                     <ul class="dropdown-menu">
@@ -29,7 +36,7 @@
                     </ul>
                 </li> -->
                 <li><a href="gamepad-support.html" class="nav-link">gamepad_support</a></li>
-                <li><a href="auto-login.html" class="nav-link">auto_login</a></li>
+                <li><a href="auto-login.html" class="nav-link active">auto_login</a></li>
                 <li><a href="https://github.com/foksikus/BokuNo" class="nav-link" target="_blank">GitHub</a></li>
             </ul>
         </div>
@@ -37,15 +44,16 @@
 
     <div class="container">
         <header>
-            <h1 class="logo">::bokuno</h1>
-            <p class="tagline">Plugin System for Ragnarok Online</p>
+            <h1 class="logo">::auto_login</h1>
+            <small>::bokuno Plugin</small>
+            <p class="tagline">Auto Login for Ragnarok Online</p>
         </header>
 
         <main>
             <section class="hero">
                 <div class="hero-content">
-                    <h2>Extend Your RO Experience</h2>
-                    <p>Bokuno is a custom plugin system that extends the capabilities of the Ragnarok Online client. Load custom plugins to add new features and enhance your gameplay.</p>
+                    <h2>Automatically login into Ragnarok Online</h2>
+                    <p>Seamlessly log into your Ragnarok Online account without manual input. Save time and enhance your gaming experience with our Auto Login plugin.</p>
                     <a href="https://github.com/foksikus/BokuNo/releases/latest/download/BokuNo.zip" class="download-btn">
                         <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
                             <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
@@ -57,44 +65,47 @@
                 </div>
             </section>
 
-            <section class="plugins">
-                <h3>Available Plugins</h3>
-                <div class="plugin-grid">
-                    <a href="gamepad-support.html" class="plugin-card">
-                        <!-- <div class="plugin-icon">🎮</div> -->
-                         <!-- <span class="plugin-status ready">Ready</span> -->
-                         <div class="gamepad-support-bg"></div>
-                         <div class="plugin-info">
-                            <h4>Gamepad Support</h4>
-                            <p>Play Ragnarok Online with full gamepad support. Customizable button mappings for movement, combat, and skills.</p>
-                         </div>
-                    </a>
-                    <a href="auto-login.html" class="plugin-card">
-                         <div class="auto-login-bg"></div>
-                         <div class="plugin-info">
-                            <h4>Auto Login</h4>
-                            <p>Automatically log in to your character with saved credentials.</p>
-                         </div>
-                    </a>
+            <section>
+                <h2 style="text-align: center;">Demo</h2>
+                <div style="display: flex; justify-content: center; margin-top: 20px;">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/_D4k0-BWuVU?si=bLlsZoqbQ-C19z0Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
             </section>
 
-            <section class="installation">
-                <h3>Installation</h3>
+                <section class="installation">
+                <h3>Setup</h3>
                 <ol>
-                    <li>Download the BokuNo.zip package from GitHub releases</li>
-                    <li>Extract and copy <code>ddraw.dll</code> (the BokuNo core) to your Ragnarok Online root folder</li>
-                    <li>Copy the <code>plugins</code> folder to your Ragnarok Online root folder</li>
-                    <li>Launch Ragnarok Online - plugins will load automatically</li>
+                    <li><a href="https://github.com/foksikus/BokuNo/releases/latest/download/BokuNo.zip" style="color: #00ffff;">::Download</a> and install bokuno-core (also see <a href="index.html" style="color: #00ffff;">::main</a> page) </li>
+                    <li>The Auto Login plugin is included in the <code>plugins</code> folder</li>
+                    <li>Configure your login credentials in <code>plugins/config_auto_login.json</code></li>
                 </ol>
             </section>
 
-            <section class="known-issues">
-                <h3>Known Issues</h3>
-                <ul class="issues-list">
-                    <li><strong>Ground Skills:</strong> Not supported yet - planned for future update</li>
-                    <li><strong>Gamepad Compatibility:</strong> Only tested with Xbox Gamepads, other types may not work</li>
-                </ul>
+            <section class="config-section">
+                <h3>Configuration</h3>
+                <p class="config-desc">Edit <code>config_auto_login.json</code> to set your login credentials.</p>
+                <h3>Type definitions</h3>
+                <pre class="">
+                    <code class="language-ts">
+type AccountName = string;
+type Password = string;
+
+interface AutoLoginConfig {
+    username: AccountName;
+    password: Password;
+}
+                    </code>
+                </pre>
+                
+                <h3>Example</h3>
+                <pre>
+                    <code class="language-json">
+{
+    "username": "YourAccountName",
+    "password": "YourPassword"
+}
+                    </code>
+                </pre>
             </section>
         </main>
 

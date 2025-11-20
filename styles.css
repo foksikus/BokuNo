@@ -340,6 +340,19 @@ h3 {
     border-radius: var(--radius-md) 0 0 var(--radius-md);
 }
 
+.plugin-card .auto-login-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url('auto-login.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    width: 25%;
+    border-radius: var(--radius-md) 0 0 var(--radius-md);
+}
+
 .plugin-card:hover {
     border-color: var(--color-accent);
 }
@@ -542,12 +555,7 @@ h3 {
 }
 
 code {
-    background: rgba(0, 0, 0, 0.3);
-    padding: 0.2rem 0.6rem;
     border-radius: var(--radius-sm);
-    font-family: "Courier New", monospace;
-    color: var(--color-code);
-    font-size: 0.95rem;
 }
 
 footer {

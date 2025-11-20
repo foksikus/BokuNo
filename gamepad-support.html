@@ -3,6 +3,14 @@
 <head>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-G2N20HL3DS"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+    <!-- and it's easy to individually load additional languages -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/ts.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/json.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -29,6 +37,7 @@
                     </ul>
                 </li> -->
                 <li><a href="gamepad-support.html" class="nav-link active">gamepad_support</a></li>
+                <li><a href="auto-login.html" class="nav-link">auto_login</a></li>
                 <li><a href="https://github.com/foksikus/BokuNo" class="nav-link" target="_blank">GitHub</a></li>
             </ul>
         </div>
@@ -83,9 +92,14 @@
                         <p>Attack, cast skills, and use items with button presses</p>
                     </div>
                     <div class="feature-card">
+                        <div class="icon">🗨️</div>
+                        <h4>NPC Interaction</h4>
+                        <p>Interact with NPCs using your gamepad</p>
+                    </div>
+                    <div class="feature-card">
                         <div class="icon">🎯</div>
                         <h4>Targeting</h4>
-                        <p>Cycle through enemies or auto-target closest mobs</p>
+                        <p>Cycle through enemies, NPCs or auto-target closest mobs</p>
                     </div>
                     <div class="feature-card">
                         <div class="icon">🕹️</div>
@@ -118,10 +132,111 @@
             <section class="config-section">
                 <h3>Configuration</h3>
                 <p class="config-desc">Edit <code>config_gamepad.json</code> to customize button mappings. Available actions:</p>
+                <h3>Type definitions</h3>
+                <pre class="">
+                    <code class="language-ts">
+type CharackterName = string;
+
+type GamepadAction = 
+    | { action: "Interact" }
+    | { action: "Attack" }
+    | { action: "PickupItem" }
+    | { action: "NextTarget" }
+    | { action: "CycleTargets" }
+    | { action: "CenterCamera" }
+    | { action: "UseSkill"; skill_id: number; level: number }
+    | { action: "UseItem"; item_id: number };
+
+type ButtonName = 
+    | "A_BUTTON"
+    | "B_BUTTON"
+    | "X_BUTTON"
+    | "Y_BUTTON"
+    | "LEFT_SHOULDER"
+    | "RIGHT_SHOULDER"
+    | "LEFT_THUMB"
+    | "RIGHT_THUMB";
+
+interface GamepadProfile {
+    Buttons: Partial&lt;Record&lt;ButtonName, GamepadAction&gt;&gt;;
+}
+
+type GamepadConfig = Record&lt;CharackterName, GamepadProfile&gt;;
+                    </code>
+                </pre>
+                
+                <h3>Example</h3>
+                <pre>
+                    <code class="language-json">
+{
+  "FokS": {
+    "Buttons": {
+      "A_BUTTON": {
+        "action": "Interact"
+      },
+      "B_BUTTON": {
+        "action": "UseSkill",
+        "skill_id": 50,
+        "level": 10
+      },
+      "X_BUTTON": {
+        "action": "UseItem",
+        "item_id": 601
+      },
+      "Y_BUTTON": {
+        "action": "PickupItem"
+      },
+      "RIGHT_SHOULDER": {
+        "action": "NextTarget"
+      },
+      "RIGHT_THUMB": {
+        "action": "CenterCamera"
+      }
+    }
+  },
+  "FxkS": {
+    "Buttons": {
+      "A_BUTTON": {
+        "action": "Interact"
+      },
+      "B_BUTTON": {
+        "action": "UseSkill",
+        "skill_id": 46,
+        "level": 10
+      },
+      "X_BUTTON": {
+        "action": "UseItem",
+        "item_id": 569
+      },
+      "Y_BUTTON": {
+        "action": "PickupItem"
+      },
+      "RIGHT_SHOULDER": {
+        "action": "NextTarget"
+      },
+      "RIGHT_THUMB": {
+        "action": "CenterCamera"
+      }
+    }
+  }
+}
+
+                    </code>
+                </pre>
+
+
                 <div class="action-grid">
+                    <div class="action-card">
+                        <h4>Interact</h4>
+                        <p>Attack or Speak with the closest Target or the currently selected target, depending on the target Type</p>
+                    </div>
                     <div class="action-card">
                         <h4>Attack</h4>
                         <p>Attack the currently selected target</p>
+                    </div>
+                    <div class="action-card">
+                        <h4>PickupItem</h4>
+                        <p>Pick up closest item from the ground</p>
                     </div>
                     <div class="action-card">
                         <h4>UseSkill</h4>

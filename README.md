@@ -1,10 +1,49 @@
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/Z8Z7QWDNW)
 
-# BokuNo
+# ::bokuno
 
-A System for loading custom plugins and extending the capabilities of the Ragnarok-Online Client.
+Plugin System for Ragnarok Online
 
-# Controller Support Plugin
+Bokuno is a custom plugin system that extends the capabilities of the Ragnarok Online client. Load custom plugins to add new features and enhance your gameplay.
+
+## Core features
+### ping
+Type `/ping` into the chat box to see your ping to the server.
+
+![Ping Demo](demo-ping.gif)
+
+## Available Plugins
+
+### Gamepad Support
+Play Ragnarok Online with full gamepad support. Customizable button mappings for movement, combat, and skills.
+
+### Auto Login
+Automatically log in to your character with saved credentials.
+
+---
+
+## Installation
+1. Download the BokuNo.zip package from [GitHub releases](https://github.com/foksikus/BokuNo/releases/latest/download/BokuNo.zip)
+
+2. **Copy the Core DLL**: Place the `core` (renamed to `ddraw.dll`) into the root directory of your Ragnarok Online installation
+   ```
+   C:\Games\YourRagnarokFolder\ddraw.dll
+   ```
+
+3. **Copy Plugin Folder**: Copy the entire `plugins` folder containing both plugins `controller_support_plugin.dll` and `auto_login.dll` and some example configs into the Ragnarok root directory
+   ```
+   C:\Games\YourRagnarokFolder\plugins\
+       └── controller_support_plugin.dll
+       └── config_gamepad.json
+       └── auto_login.dll
+       └── config_auto_login.json
+   ```
+4. **Configure** the plugins for your use, or **remove** them if you dont want to use them.
+
+5. **Launch Game**: Start Ragnarok Online normally. The controller support will load automatically.
+
+---
+# ::gamepad_support Plugin
 
 A gamepad/controller plugin for Ragnarok Online that enables full controller support with customizable button mappings.
 
@@ -19,34 +58,20 @@ A gamepad/controller plugin for Ragnarok Online that enables full controller sup
 - **Target Selection**: Cycle through nearby enemies and auto-target closest mob
 - **Attack Commands**: Attack selected targets with a button press
 
-## Installation
-
-1. **Copy Core DLL**: Place the `core` (renamed to `ddraw.dll`) into the root directory of your Ragnarok Online installation
-   ```
-   C:\Games\YourRagnarokFolder\ddraw.dll
-   ```
-
-2. **Copy Plugin Folder**: Copy the entire `plugins` folder containing both `controller_support_plugin.dll` and `config_gamepad.json` into the Ragnarok root directory
-   ```
-   C:\Games\YourRagnarokFolder\plugins\
-       └── controller_support_plugin.dll
-       └── config_gamepad.json
-   ```
-
-3. **Launch Game**: Start Ragnarok Online normally. The controller support will load automatically.
-
 ## Configuration
 
 Edit `config_gamepad.json` to customize your button mappings. The configuration file uses a simple JSON structure:
 
 ```json
 {
-  "Buttons": {
-    "BUTTON_NAME": {
-      "action": "ActionType",
-      "skill_id": 123,
-      "item_id": 456,
-      "level": 10
+  "char_name": {
+    "Buttons": {
+      "BUTTON_NAME": {
+        "action": "ActionType",
+        "skill_id": 123,
+        "item_id": 456,
+        "level": 10
+      }
     }
   }
 }
@@ -65,15 +90,39 @@ Edit `config_gamepad.json` to customize your button mappings. The configuration 
 
 ### Available Actions
 
-#### `Attack`
-Attacks the currently selected target. If no target is selected, automatically selects the closest enemy.
+#### `Interact`
+Attack or Speak with the closest Target or the currently selected target, depending on the target Type.
 
 **Parameters**: None
 
 **Example**:
 ```json
 "A_BUTTON": {
+  "action": "Interact"
+}
+```
+
+#### `Attack`
+Attacks the currently selected target.
+
+**Parameters**: None
+
+**Example**:
+```json
+"B_BUTTON": {
   "action": "Attack"
+}
+```
+
+#### `PickupItem`
+Pick up closest item from the ground.
+
+**Parameters**: None
+
+**Example**:
+```json
+"Y_BUTTON": {
+  "action": "PickupItem"
 }
 ```
 
@@ -111,7 +160,7 @@ Uses an item from your inventory.
 ```
 
 #### `NextTarget`
-Cycles through nearby valid targets within range of 7. 
+Cycle through nearby enemies.
 
 **Parameters**: None
 
@@ -134,33 +183,33 @@ Resets the camera angle to 0 degrees (default view).
 }
 ```
 
-## Default Configuration Example
+## Example Configuration
 
 ```json
 {
-  "Buttons": {
-    "A_BUTTON": {
-      "action": "Attack"
-    },
-    "B_BUTTON": {
-      "action": "UseSkill",
-      "skill_id": 50,
-      "level": 10
-    },
-    "X_BUTTON": {
-      "action": "UseItem",
-      "item_id": 601
-    },
-    "Y_BUTTON": {
-      "action": "UseSkill",
-      "skill_id": 1013,
-      "level": 1
-    },
-    "RIGHT_SHOULDER": {
-      "action": "NextTarget"
-    },
-    "RIGHT_THUMB": {
-      "action": "CenterCamera"
+  "FokS": {
+    "Buttons": {
+      "A_BUTTON": {
+        "action": "Interact"
+      },
+      "B_BUTTON": {
+        "action": "UseSkill",
+        "skill_id": 50,
+        "level": 10
+      },
+      "X_BUTTON": {
+        "action": "UseItem",
+        "item_id": 601
+      },
+      "Y_BUTTON": {
+        "action": "PickupItem"
+      },
+      "RIGHT_SHOULDER": {
+        "action": "NextTarget"
+      },
+      "RIGHT_THUMB": {
+        "action": "CenterCamera"
+      }
     }
   }
 }
@@ -174,20 +223,33 @@ Resets the camera angle to 0 degrees (default view).
 
 ## Known Issues
 
-- **Target Selection Icon**: The target selection indicator on monsters only works reliably if you manually click on a monster first with your mouse
-- **Setup Application**: The `opensetup.exe` in the Ragnarok root directory will not open while `ddraw.dll` is present. Temporarily rename or remove `ddraw.dll` if you need to access game setup options
-- **Ground skills not working**: Ground skills are **not** supported yet.
+- **Ground Skills:** Not supported yet - planned for future update
+- **Gamepad Compatibility:** Only tested with Xbox Gamepads, other types may not work
 
+---
 
+# ::auto_login Plugin
 
-## Troubleshooting
+Auto Login for Ragnarok Online
 
-1. **Controller not detected**: Ensure your controller is connected before launching Ragnarok Online
-2. **Buttons not responding**: Verify your `config_gamepad.json` syntax is valid JSON
-3. **Skills not casting**: Double-check skill IDs and ensure you meet the skill requirements (SP, items, etc.)
-4. **Need to access game settings**: Temporarily rename `ddraw.dll` to something else, run `opensetup.exe`, then rename it back
+Seamlessly log into your Ragnarok Online account without manual input. Save time and enhance your gaming experience with the Auto Login plugin.
 
-## Notes
+## Configuration
+
+Edit `config_auto_login.json` to set your login credentials.
+
+### Example
+
+```json
+{
+    "username": "YourAccountName",
+    "password": "YourPassword"
+}
+```
+
+---
+
+# Notes
 - Skills are automatically categorized as self-cast or target-cast based on skill ID
 - Target range for cycling is currently set to 7 cells
 - The only controller used for testing was an Xbox-Controller. It's likely that other controller types **won't** work.
